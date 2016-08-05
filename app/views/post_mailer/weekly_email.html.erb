@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="font-family: open sans, helvetica neue, helvetica, arial; color: #414040">
+    <div style="text-align: center">
+      <h1>Your Weekly - <%= @date %></h1>
+      <% @posts.each do |post| %>
+      <div style="margin-bottom: 2em;
+        border: 1px solid #dedbdb;
+        width: 60%;
+        margin-left: 20%;
+        padding: .5em 1.5em;
+        text-align: left;">
+
+        <%= link_to post.title, post.url %> <br>
+        <%= post.description %><br>
+      </div>
+      <% end %>
+    </div>
+  </body>
+</html>
