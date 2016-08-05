@@ -1,5 +1,7 @@
 # Your weekly
 
+Manage your own weekly-like e-mail list.
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine

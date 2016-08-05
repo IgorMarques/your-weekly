@@ -1,0 +1,23 @@
+<div class="center-container">
+  <h1>All posts</h1>
+
+  <h2>Posts to be sent on the next weekly</h2>
+
+  <%= render @not_sent_posts %>
+
+  <% if @not_sent_posts.empty? %>
+    <p>
+      No post submitted yet!
+    </p>
+  <% end %>
+
+  <h2>Post sent previously</h2>
+
+  <%= render @sent_posts %>
+
+  <% if @sent_posts.empty? %>
+    <p>
+      No post in this category yet!
+    </p>
+  <% end %>
+</div>
