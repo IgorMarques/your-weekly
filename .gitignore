@@ -11,6 +11,7 @@
 /public/assets
 /tags
 /tmp/*
+.tmp/*
 coverage
 node_modules
 public/webpack
