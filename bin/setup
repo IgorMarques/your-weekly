@@ -30,23 +30,13 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
 end
-if heroku join --app your-weekly-staging &> /dev/null; then
-  git remote add staging git@heroku.com:your-weekly-staging.git || true
-  printf 'You are a collaborator on the "your-weekly-staging" Heroku app
-'
-else
-  printf 'Ask for access to the "your-weekly-staging" Heroku app
-'
-fi
 
-if heroku join --app your-weekly-production &> /dev/null; then
-  git remote add production git@heroku.com:your-weekly-production.git || true
-  printf 'You are a collaborator on the "your-weekly-production" Heroku app
-'
-else
-  printf 'Ask for access to the "your-weekly-production" Heroku app
-'
-fi
+`git remote add staging git@heroku.com:your-weekly-staging.git 2> /dev/null`
+`git remote add production git@heroku.com:your-weekly-production.git 2> /dev/null`
+`git config heroku.remote staging`
 
-
-git config heroku.remote staging
+puts
+puts 'If you already have access, try joining this app as a collaborator with the following commands:'
+puts
+puts "heroku join --app your-weekly-staging"
+puts "heroku join --app your-weekly-production"
