@@ -1,5 +1,5 @@
 class PostMailer < ApplicationMailer
-  default to: proc { Subscriber.email_list },
+  default bcc: proc { Subscriber.email_list },
           from: 'your-weekly@test.com'
 
   def weekly_email(posts)
