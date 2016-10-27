@@ -7,4 +7,13 @@
   <%= link_to new_subscriber_path do %>
     <h2>Not subscribed yet?</h2>
   <% end %>
+  <hr>
+  <hr>
+  <hr>
+
+  <h3>Unsubscribe : (</h2>
+  <%= form_for :unsubscribe, url: unsubscribe_path, method: :delete do |f| %>
+    <%= f.text_field :email, placeholder: 'Your email' %>
+    <%= f.submit 'Unsubscribe' %>
+  <% end %>
 </div>
