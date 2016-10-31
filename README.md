@@ -9,7 +9,18 @@ with the necessary dependencies to run and test this app:
 
     % ./bin/setup
 
-It assumes you have a machine equipped with Ruby, Postgres, etc.
+It assumes you have a machine equipped with:
+
+* Ruby
+* Postgres
+* Redis
+
+## Running the application
+
+  $ foreman start
+
+Check the Procfile for more information
+
 ## Deploying
 
 If you have previously run the `./bin/setup` script,
