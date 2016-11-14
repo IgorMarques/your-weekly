@@ -28,8 +28,8 @@ RSpec.describe PostMailer do
         .to eq(['your-weekly@test.com'])
     end
 
-    it 'sends an email from the subscribers' do
-      expect(described_class.weekly_email(posts).to).to eq(subscribers)
+    it 'sends an email to subscribers' do
+      expect(described_class.weekly_email(posts).bcc).to eq(subscribers)
     end
 
     it 'sends an email with the right subject' do
