@@ -1,0 +1,11 @@
+<div class="center-container">
+  <h1>Last weeklies</h1>
+
+  <% @weeklies.each do |weekly| %>
+    <h3><%= weekly.date %></h3>
+
+    <% weekly.posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  <% end %>
+</div>
